@@ -16,6 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetElement.innerHTML = translations[lang][key];
             }
         });
+
+        // --- NOVO BLOCO DE CÓDIGO PARA O CURRÍCULO ---
+        // Encontra o botão de download pelo id que criámos
+        const downloadButton = document.getElementById('download-resume-btn');
+        if (downloadButton) {
+            if (lang === 'pt') {
+                // Se o idioma for português, aponta para o CV em português
+                downloadButton.href = 'assets/JoelsonMendonca_CV_PT.pdf';
+            } else {
+                // Para qualquer outro idioma (incluindo o inglês), aponta para o CV em inglês
+                downloadButton.href = 'assets/JoelsonMendonca_CV_EN.pdf';
+            }
+        }
+        // --- FIM DO NOVO BLOCO ---
         // Guarda a preferência do utilizador no armazenamento local
         localStorage.setItem('language', lang);
     };
